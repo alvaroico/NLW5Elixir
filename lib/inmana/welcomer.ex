@@ -18,7 +18,11 @@ defmodule Inmana.Welcomer do
     "You are very special banana"
   end
 
-  defp evaluate(name, _idade) do
+  defp evaluate(name, age) when age >= 18 do
     "Welcome #{name}"
+  end
+
+  defp evaluate(name, _age) do
+    "You shall not pass #{name}"
   end
 end
