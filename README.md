@@ -39,3 +39,5 @@ mix deps.get
 mix test
 
 mix credo.gen.config
+
+mix compile  
