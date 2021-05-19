@@ -41,3 +41,7 @@ mix test
 mix credo.gen.config
 
 mix compile  
+
+# Verificar sintaxe
+mix credo 
+mix credo --strict
