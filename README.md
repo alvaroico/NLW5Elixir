@@ -21,5 +21,10 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 # NLW5Elixir
 
+docker-compose up -d
+
 mix phx.new inmana --no-html --no-webpack
 
+mix ecto.create
+
+mix phx.server
