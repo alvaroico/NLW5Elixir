@@ -5,24 +5,24 @@ defmodule Inmana.Welcomer do
   # Se o usuario for menor de idade, retornarmo um erro
   # temos que tratar o nome do usuario para entradas erradas, como "BaNaNa", "BaNaNa" \n
 
-  def welcome(params) do
-    age = params["age"] |> String.to_integer()
+  def welcome(%{"name" => name, "age" => age}) do
+    age = String.to_integer(age)
 
-    params["name"]
+    name
     |> String.trim()
     |> String.downcase()
     |> evaluate(age)
   end
 
   defp evaluate("banana", 42) do
-    "You are very special banana"
+    {:ok,"You are very special banana"}
   end
 
   defp evaluate(name, age) when age >= 18 do
-    "Welcome #{name}"
+    {:ok,"Welcome #{name}"}
   end
 
   defp evaluate(name, _age) do
-    "You shall not pass #{name}"
+    {:error,"You shall not pass #{name}"}
   end
 end
