@@ -28,3 +28,4 @@ mix phx.new inmana --no-html --no-webpack
 mix ecto.create
 
 mix phx.server
+http://localhost:4000/dashboard
