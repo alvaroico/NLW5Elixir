@@ -29,3 +29,13 @@ mix ecto.create
 
 mix phx.server
 http://localhost:4000/dashboard
+
+https://github.com/rrrene/credo
+
+{:credo, "~> 1.5", only: [:dev, :test], runtime: false}
+# baizar dependencias
+mix deps.get
+
+mix test
+
+mix credo.gen.config
