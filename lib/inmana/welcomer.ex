@@ -6,12 +6,19 @@ defmodule Inmana.Welcomer do
   # temos que tratar o nome do usuario para entradas erradas, como "BaNaNa", "BaNaNa" \n
 
   def welcome(params) do
-    name = params["name"]
-    age = params["age"]
+    age = params["age"] |> String.to_integer()
 
-    IO.inspect(name)
-    IO.inspect(age)
-    # iex -S mix
-    # Inmana.Welcomer.welcome(%{"name" => "Alvaro", "age" => 27})
+    params["name"]
+    |> String.trim()
+    |> String.downcase()
+    |> evaluate(age)
+  end
+
+  defp evaluate("banana", 42) do
+    "You are very special banana"
+  end
+
+  defp evaluate(name, _idade) do
+    "Welcome #{name}"
   end
 end
