@@ -15,5 +15,8 @@ defmodule Inmana.Restaurant do
     %__MODULE__{}
     |> cast(params, [:email, :name])
     |> validate_required([:email, :name])
+    |> validate_length(:name, min: 2)
+    |> validate_format(:email, ~r/@/)
+    |> unique_constraint([:email])
   end
 end
