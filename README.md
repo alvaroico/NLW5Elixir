@@ -45,3 +45,6 @@ mix compile
 # Verificar sintaxe
 mix credo 
 mix credo --strict
+
+mix ecto.gen.migration create_restaurants_table
+mix ecto.migrate
