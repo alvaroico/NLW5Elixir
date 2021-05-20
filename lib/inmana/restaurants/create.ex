@@ -4,7 +4,7 @@ defmodule Inmana.Restaurants.Create do
   def call(params) do
     params
     |> Restaurant.changeset()
-    |> Repo.insert!()
+    |> Repo.insert()
     |> handle_insert()
   end
 

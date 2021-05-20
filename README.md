@@ -48,3 +48,15 @@ mix credo --strict
 
 mix ecto.gen.migration create_restaurants_table
 mix ecto.migrate
+
+
+---------
+mix phx.server
+
+curl --location --request POST 'http://localhost:4000/api/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Rival",
+    "email": "rivaldadcddaif2o@huoo.com"
+}'
+-----------
