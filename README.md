@@ -60,3 +60,6 @@ curl --location --request POST 'http://localhost:4000/api/restaurants' \
     "email": "rivaldadcddaif2o@huoo.com"
 }'
 -----------
+
+mix ecto.gen.migration create_supplies_table
+ 
