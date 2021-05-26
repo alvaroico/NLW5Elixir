@@ -20,6 +20,10 @@ defmodule InmanaWeb.ErrorView do
     %{message: translate_errors(changeset)}
   end
 
+  def render("error.json", %{result: result}) do
+    %{message: result}
+  end
+
   defp translate_errors(changest) do
     Changeset.traverse_errors(changest, fn {msg, opts} ->
       Enum.reduce(opts, msg, fn {key, value}, acc ->

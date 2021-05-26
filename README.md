@@ -76,4 +76,8 @@ curl --location --request POST 'http://localhost:4000/api/supplies' \
 }
 '
 -------------------
- 
+# Mostrar todas as Rotas que são criadas automaticamente 
+mix phx.routes
+
+curl --location --request GET 'http://localhost:4000/api/supplies/6ff8b865-11f7-472b-94f6-948fc70128c2'
+
