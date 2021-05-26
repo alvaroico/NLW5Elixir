@@ -63,5 +63,17 @@ curl --location --request POST 'http://localhost:4000/api/restaurants' \
 
 mix ecto.gen.migration create_supplies_table
 mix ecto.migrate
+mix phx.server
 
+
+curl --location --request POST 'http://localhost:4000/api/supplies' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "restaurant_id": "343c15f2-ea2b-4f50-b9ad-fa2a63f988c0",
+    "description": "Molho de tomate",
+    "expiration_date": "2021-04-16",
+    "responsible": " Banana man"
+}
+'
+-------------------
  
