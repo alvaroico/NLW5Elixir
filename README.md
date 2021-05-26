@@ -62,4 +62,6 @@ curl --location --request POST 'http://localhost:4000/api/restaurants' \
 -----------
 
 mix ecto.gen.migration create_supplies_table
+mix ecto.migrate
+
  
